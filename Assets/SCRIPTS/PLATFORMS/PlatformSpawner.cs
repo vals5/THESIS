@@ -25,7 +25,6 @@ public class PlatformSpawner : MonoBehaviour
 
     public float distanceUntilNextSpawn = 0;
 
-
     void Update()
     {
         if (player.position.x + aheadOfPlayerSpawningOffset > distanceUntilNextSpawn)
@@ -38,7 +37,6 @@ public class PlatformSpawner : MonoBehaviour
             DeletePrefab();
         }
     }
-
     public void SpawnPrefab(BasePlatform newPlatform)
     {
         GameObject go = Instantiate(
@@ -50,7 +48,6 @@ public class PlatformSpawner : MonoBehaviour
         activePlatforms.Add(go);
         distanceUntilNextSpawn += margin + newPlatform.width;
     }
-
     private void DeletePrefab()
     {
         Destroy(activePlatforms[0]);
