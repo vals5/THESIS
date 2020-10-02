@@ -150,12 +150,14 @@ public class Fox : MonoBehaviour
         {
             case "GEM":
                 Score.scoreAmount += 5;
+				FindObjectOfType<AudioManager>().Play("Coins");
                 Destroy(col.gameObject);
                 break;
 
             case "CHERRY":
                 Score.scoreAmount += 2;
-                Destroy(col.gameObject);
+				FindObjectOfType<AudioManager>().Play("Coins");
+				Destroy(col.gameObject);
                 break;
         }
     }
