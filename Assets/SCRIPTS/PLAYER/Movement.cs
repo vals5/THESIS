@@ -33,17 +33,13 @@ public class Movement : MonoBehaviour
 		else if (Input.GetButtonUp("Crouch"))
 		{
 			crouch = false;
-		}
-		if (!Fox.isGameStarted)
-			return;
+		}		
 	}
 	void FixedUpdate()
 	{		
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
-
-		if (!Fox.isGameStarted)
-			return;
+		
 	}
 	public void OnLanding()
     {

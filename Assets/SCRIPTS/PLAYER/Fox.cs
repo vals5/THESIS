@@ -31,13 +31,10 @@ public class Fox : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
-	public static bool isGameStarted;
-	public GameObject startingText;
-
-	void Start()
-	{		
-		isGameStarted = false;		
-	}
+	public enum GameState { Idle, Playing};
+	public GameState gameState = GameState.Idle;
+	public GameObject enterText;
+	
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -163,12 +160,12 @@ public class Fox : MonoBehaviour
     }
 	void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Return) && !isGameStarted)
-		{
-			isGameStarted = true;
-			GetComponent<Movement>().enabled = true;
-			Destroy(startingText);
-		}
+        if (gameState == GameState.Idle && (Input.GetKeyDown(KeyCode.Return)))
+        {
+			gameState = GameState.Playing;
+			enterText.SetActive(false);
+        }
+
 	}
 	
 }
