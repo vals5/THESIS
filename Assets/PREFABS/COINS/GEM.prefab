@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 927065104566492297}
   - component: {fileID: 927065104566492303}
   - component: {fileID: 3486781994892801265}
+  - component: {fileID: 6833541487739967633}
   m_Layer: 10
   m_Name: GEM
   m_TagString: Gem
@@ -257,3 +258,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6833541487739967633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927065104566492340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8d3480a5bd4c442b3308a3da14134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Fox : MonoBehaviour
 {
@@ -34,8 +36,18 @@ public class Fox : MonoBehaviour
 	public enum GameState { Idle, Playing};
 	public GameState gameState = GameState.Idle;
 	public GameObject enterText;
-	
-	private void Awake()
+
+	public int currHealth;
+	public int maxHealth = 3;
+
+	public static bool isMagnet;
+    void Start()
+    {
+		isMagnet = false;
+		currHealth = maxHealth; 
+    }
+
+    private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -157,6 +169,12 @@ public class Fox : MonoBehaviour
 				Destroy(col.gameObject);
                 break;
         }
+
+		if(col.tag  == "Magnet")
+        {
+			isMagnet = true;
+			Destroy(col.gameObject);
+        }
     }
 	void Update()
     {
@@ -166,6 +184,22 @@ public class Fox : MonoBehaviour
 			enterText.SetActive(false);
         }
 
-	}
-	
+		if(currHealth > maxHealth)
+        {
+			currHealth = maxHealth;
+        }
+
+		if(currHealth <= 0)
+        {
+			Death();
+        }
+	}	
+	void Death()
+    {
+		Application.LoadLevel(Application.loadedLevel);
+    }
+	public void Damage(int dmg)
+    {
+		currHealth -= dmg;
+    }	
 }

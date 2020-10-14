@@ -11,6 +11,90 @@ TextureImporter:
   - first:
       213: 7538299964266065395
     second: HEARTS_2
+  - first:
+      213: 6916433260549687540
+    second: HEARTS_3
+  - first:
+      213: -5469943221441633122
+    second: HEARTS_4
+  - first:
+      213: -4878262506355091246
+    second: HEARTS_5
+  - first:
+      213: 6131890703412703262
+    second: HEARTS_6
+  - first:
+      213: -6471504000928019895
+    second: HEARTS_7
+  - first:
+      213: -1179818363899032072
+    second: HEARTS_8
+  - first:
+      213: 2418261675960839732
+    second: HEARTS_9
+  - first:
+      213: 4443564660771333690
+    second: HEARTS_10
+  - first:
+      213: 3867868432494885401
+    second: HEARTS_11
+  - first:
+      213: 7920688073803812451
+    second: HEARTS_12
+  - first:
+      213: -5995184246983059272
+    second: HEARTS_13
+  - first:
+      213: 4565509479449503652
+    second: HEARTS_14
+  - first:
+      213: -2401418839709822919
+    second: HEARTS_15
+  - first:
+      213: 5011339695403835059
+    second: HEARTS_16
+  - first:
+      213: 3325055651268442157
+    second: HEARTS_17
+  - first:
+      213: -7475497749975704458
+    second: HEARTS_18
+  - first:
+      213: -7028557327828588542
+    second: HEARTS_19
+  - first:
+      213: 7269326470785357678
+    second: HEARTS_20
+  - first:
+      213: 8501397650880407116
+    second: HEARTS_21
+  - first:
+      213: -6210198336599901493
+    second: HEARTS_22
+  - first:
+      213: -8883330645233412017
+    second: HEARTS_23
+  - first:
+      213: 2613162387610881500
+    second: HEARTS_24
+  - first:
+      213: 1046847597599113293
+    second: HEARTS_25
+  - first:
+      213: -3565052781981363875
+    second: HEARTS_26
+  - first:
+      213: 8756491307878791704
+    second: HEARTS_27
+  - first:
+      213: -2716092496950731347
+    second: HEARTS_28
+  - first:
+      213: -7276039094256635543
+    second: HEARTS_29
+  - first:
+      213: -5237343582291038307
+    second: HEARTS_30
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -55,7 +139,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,12 +185,12 @@ TextureImporter:
       name: HEARTS_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 7
-        width: 265
-        height: 230
+        x: 2
+        y: 77
+        width: 83
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,12 +206,12 @@ TextureImporter:
       name: HEARTS_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 2
-        width: 265
-        height: 231
+        x: 2
+        y: 62
+        width: 49
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,12 +227,12 @@ TextureImporter:
       name: HEARTS_2
       rect:
         serializedVersion: 2
-        x: 587
-        y: 0
-        width: 265
-        height: 230
+        x: 2
+        y: 32
+        width: 49
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,6 +240,48 @@ TextureImporter:
       bones: []
       spriteID: 3fd2b6cb0eb6d9860800000000000000
       internalID: 7538299964266065395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HEARTS_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 17
+        width: 49
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8c2c7d76b1cff50800000000000000
+      internalID: 6916433260549687540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HEARTS_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 49
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e946a600f9bd614b0800000000000000
+      internalID: -5469943221441633122
       vertices: []
       indices: 
       edges: []
