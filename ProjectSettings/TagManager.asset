@@ -10,7 +10,7 @@ TagManager:
   - Turn
   - Enemy
   - Platform
-  - Magnet
+  - Powerup
   layers:
   - Default
   - TransparentFX

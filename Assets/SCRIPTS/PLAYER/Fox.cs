@@ -40,13 +40,6 @@ public class Fox : MonoBehaviour
 	public int currHealth;
 	public int maxHealth = 3;
 
-	public static bool isMagnet;
-    void Start()
-    {
-		isMagnet = false;
-		currHealth = maxHealth; 
-    }
-
     private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -170,11 +163,13 @@ public class Fox : MonoBehaviour
                 break;
         }
 
-		if(col.tag  == "Magnet")
+		if(col.tag  == "Powerup")
         {
-			isMagnet = true;
 			Destroy(col.gameObject);
-        }
+			m_JumpForce = 600f;
+			GetComponent<SpriteRenderer>().color = Color.red;
+			StartCoroutine(ResetPower());
+		}
     }
 	void Update()
     {
@@ -202,4 +197,10 @@ public class Fox : MonoBehaviour
     {
 		currHealth -= dmg;
     }	
+	private IEnumerator<object> ResetPower()
+    {
+		yield return new WaitForSeconds(15);
+		m_JumpForce = 400f;
+		GetComponent<SpriteRenderer>().color = Color.white;
+	}
 }

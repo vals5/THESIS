@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 983164620}
   m_Layer: 0
   m_Name: POWERUP
-  m_TagString: Magnet
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
