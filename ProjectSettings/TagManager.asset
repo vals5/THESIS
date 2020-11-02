@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Cherry
-  - Gem
   - Turn
   - Enemy
   - Platform
   - Powerup
+  - Pickup
+  - Magnet
   layers:
   - Default
   - TransparentFX
@@ -21,8 +21,8 @@ TagManager:
   - 
   - 
   - Player
-  - Cherry
-  - Gem
+  - Pickup
+  - 
   - Enemy
   - 
   - 

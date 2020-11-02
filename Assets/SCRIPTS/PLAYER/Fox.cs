@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -40,7 +40,14 @@ public class Fox : MonoBehaviour
 	public int currHealth;
 	public int maxHealth = 3;
 
-    private void Awake()
+	[Header("Magnet")]
+	[Space]
+
+	public bool isMagnet = false;
+	public float magnetDuration = 15f;
+	public float magnetSpeed = 2f;
+
+	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -148,27 +155,27 @@ public class Fox : MonoBehaviour
 	}
     private void OnTriggerEnter2D(Collider2D col)
     {
-        switch (col.name)
+		if(col.CompareTag("Pickup"))
         {
-            case "GEM":
-                Score.scoreAmount += 5;
-				FindObjectOfType<AudioManager>().Play("Coins");
-                Destroy(col.gameObject);
-                break;
+			var pickup = col.GetComponent<Pickup>(); //Access Pickup script
+			Score.scoreAmount += pickup.points;
+			FindObjectOfType<AudioManager>().Play("Coins");
+			Destroy(col.gameObject);
+		}
 
-            case "CHERRY":
-                Score.scoreAmount += 2;
-				FindObjectOfType<AudioManager>().Play("Coins");
-				Destroy(col.gameObject);
-                break;
-        }
-
-		if(col.tag  == "Powerup")
+		if(col.CompareTag("Powerup"))
         {
 			Destroy(col.gameObject);
 			m_JumpForce = 600f;
 			GetComponent<SpriteRenderer>().color = Color.red;
 			StartCoroutine(ResetPower());
+		}
+		
+		if(col.CompareTag("Magnet"))
+        {
+			Destroy(col.gameObject);
+			GetComponent<SpriteRenderer>().color = Color.blue;
+			StartCoroutine(MagnifiedRoutine());
 		}
     }
 	void Update()
@@ -188,6 +195,12 @@ public class Fox : MonoBehaviour
         {
 			Death();
         }
+		
+		if (transform.position.y < -7) //If it falls less than 7 units, it destroys and restarts.
+		{
+			Destroy(this.gameObject);
+			Death();
+		}
 	}	
 	void Death()
     {
@@ -197,10 +210,17 @@ public class Fox : MonoBehaviour
     {
 		currHealth -= dmg;
     }	
-	private IEnumerator<object> ResetPower()
+	private IEnumerator ResetPower()
     {
 		yield return new WaitForSeconds(15);
 		m_JumpForce = 400f;
+		GetComponent<SpriteRenderer>().color = Color.white;
+	}
+	private IEnumerator MagnifiedRoutine()
+    {
+		isMagnet = true;
+		yield return new WaitForSeconds(magnetDuration);
+		isMagnet = false;
 		GetComponent<SpriteRenderer>().color = Color.white;
 	}
 }

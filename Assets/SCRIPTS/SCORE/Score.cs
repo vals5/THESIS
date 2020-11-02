@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
     {
         score = GetComponent<Text>();
         scoreAmount = 0;
-        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        highScore.text = $"HIGH SCORE: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
     void Update()
     {
@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         if(scoreAmount > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", scoreAmount);
-            highScore.text = scoreAmount.ToString();
+            highScore.text = $"HIGH SCORE: {scoreAmount}";
         }
     }    
 }
