@@ -47,6 +47,8 @@ public class Fox : MonoBehaviour
 	public float magnetDuration = 15f;
 	public float magnetSpeed = 2f;
 
+	public Animator CanvasAC;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -185,8 +187,8 @@ public class Fox : MonoBehaviour
 			gameState = GameState.Playing;
 			enterText.SetActive(false);
         }
-
-		if(currHealth > maxHealth)
+		
+		if (currHealth > maxHealth)
         {
 			currHealth = maxHealth;
         }
@@ -204,7 +206,7 @@ public class Fox : MonoBehaviour
 	}	
 	void Death()
     {
-		Application.LoadLevel(Application.loadedLevel);
+		CanvasAC.SetTrigger("DEATH");
     }
 	public void Damage(int dmg)
     {
